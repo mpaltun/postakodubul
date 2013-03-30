@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="tr"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="tr"> <!--<![endif]-->
+<html class=" js no-touch svg inlinesvg svgclippaths no-ie8compat" lang="tr"><!--<![endif]--><head>
+  <meta charset="utf-8">
+  
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="Content-Language" content="tr">
+  <title>
+    {% if breadcrumb %}
+      {{ breadcrumb }} Posta Kodu | Posta Kodu Bul
+    {% else %}
+      Türkiye Posta Kodları | Posta Kodu Bul
+    {% endif %}
+  </title>
+  <meta  content="{{breadcrumb}} Posta Kodu. il (şehir) , ilçe , kasaba , köy, mahalle, cadde, sokak posta kodları. Türkiye posta kodu sorgulama. PTT den alınan resmi kodlar." name="description">
+  <meta  content="posta kodu, posta kodlar, türkiye posta kodları, istanbul posta kodu, ankara posta kodu, nerenin kodu, posta kodu bul, posta kodu ne, posta kodu ara, posta kodu sorgula, turkey postal code" name="keywords">
+  <meta name="google-site-verification" content="vsHxGrruEv5IXMlxdA1KSBJUBZIexHzDoNrardkMcpE" />
+
+  <!-- Included CSS Files -->
+  <link rel="stylesheet" href="http://static.postakodubul.com/css/templates.css">
+  <link rel="shortcut icon"  href="http://static.postakodubul.com/favicon.ico">
+ 
+</head>
+
+
+<body>
+
+<div class="row">
+  <div class="twelve columns">
+
+    <!-- Navigation -->
+
+      <nav class="top-bar contain-to-grid" style="">
+        <ul>
+          <li class="name"><h1><a href="/">posta kodu bul</a></h1></li>
+          <li class="toggle-topbar"><a href="#"></a></li>
+        </ul>
+      </nav>
+    <!-- End Navigation -->
+    </div>
+  </div>
+
+
+  <br>
+  {% if name %}
+    <div class="row">
+      <div class="three columns">
+      </div>
+    
+      <div class="six columns">
+        <div class="panel">
+          <h1 class="center header">{{name}} Posta Kodu</h1>
+          {% if pcode != "0" %}
+            <h3 class="center">{{pcode}}</h3>
+          {% endif %}
+        </div>
+      </div>
+        <div class="three columns">
+        </div>
+    </div>
+  {% endif %}
+
+  <div class="row">
+    <div class="twelve columns">
+      <div class="row">
+
+    <!-- Thumbnails -->
+
+      {% for location in locations %}
+        <div class="three mobile-two columns">
+          <h2 class="panel">
+            	<a href="{{location.slug}}">{{location.name}}</a>
+          </h2>
+        </div>
+      {% endfor %}
+
+    <!-- End Thumbnails -->
+
+      </div>
+    </div>
+  </div>
+    <div class="row">
+      <div class="center">
+      </div>
+    </div>
+
+    <!-- Footer -->
+
+  <footer class="row">
+    <div class="twelve columns"><hr>
+      <div class="row">
+
+        <div class="six columns">
+          <p>© Copyright Magara Inc.</p>
+      </div>
+
+        <div class="six columns">
+          <ul class="inline-list right">
+            <li><a href="/hakkimizda">Hakkımızda</a></li>
+          </ul>
+        </div>
+    </div>
+  </footer>
+
+    <!-- End Footer -->
+  <!-- Included JS Files -->
+  <script src="http://static.postakodubul.com/assets/templates.js"></script>
+  <script type="text/javascript">
+    $(window).load(function() {
+      $('#featured').orbit({ fluid: '2x1' });
+    });
+  </script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37107151-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body></html>

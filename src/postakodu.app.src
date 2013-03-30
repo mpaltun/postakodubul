@@ -1,0 +1,15 @@
+{application, postakodu,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib,
+                  axiom,
+                  crypto,
+                  emysql
+                 ]},
+  {mod, { postakodu_app, []}},
+  {env, []}
+ ]}.
