@@ -16,10 +16,6 @@ handle('GET', [], _Request) ->
 	Locations = collect_locations(Docs),
 	axiom:dtl(home, [{breadcrumb, <<"Türkiye">>}, {locations, Locations}]);
 
-handle('GET', [<<"refresh">>], _Request) ->
-	postakodu_templates:compile_all(),
-	<<"ok">>;
-
 handle('GET', [<<"hakkimizda">>], _Request) ->
 	axiom:dtl(about, []);
 
